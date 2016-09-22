@@ -1,0 +1,45 @@
+Question 1:
+
+Is there a maximum mass? No, and Yes! In the olde Newton equations, there is no limit, and the radius of the star keeps increasing indefinately. Which makes sense classically, because if you keep putting more stuff somewhere, it makes sense that the amount of space that it takes up gets larger. For the more modern TOV equation, it doesn't however, and it limits at around 3.5 Solar masses. A hand wavey way of explaning this, is to do with the fermionic properties of neutrons. Because neutrons are fermions, they can't exist in the same energy state as another identical perticle in the same space, they must occupy another energy state. So normally, if you 'put two fermions together', either one fermion will have to jump to a higher energy state, or the fermion will have to move away. Normally, it is more energy efficient to move away, but the TOV equation suggests that once the gravitational force of a star becomes high enough, it becomes more energy efficient to just jump to incresingly higher energy states than to try to resist the intense gravitational pull. This leads to more dense starts of higher and higher energy state neutrons. Which is pretty damn awesome!
+
+Question 2:
+
+What is the relationship between mass and radius appear to be for small central density? For smaller neutron stars, as the starting density increases, the relationship between mass and radius appears to be a linear increase. My intuition says that this is fine, because if you picture a normal sphere, if you linearly increase the radius, the mass is probably going to increase proportionally to r^3. (since v = 4/3 * pi * r^3, and volume * density  = mass). If you have the equation:
+
+y = k * x^3
+
+Where 'k' is a constant of proportionality. If you take the log of both sides:
+
+log(y) = log(k) + log(x^3)
+log(y) = log(k) + 3*log(x)
+
+if log(k) = 1, then the gradient, or log(y)/log(x) = 1/3 which is constant!
+
+This makes sense, because we are assuming volume * density = mass here, and that density is constant. What we talked about in Question 1, was how at higher masses, this relationship breaks down due to the fermionic nature of neutrons.
+
+                             |
+                         .   |
+                             |
+               \    *        |     *    .  /
+                 \        *  |  .        /
+              .    \     ___---___     /    .  
+                     \.--         --./     
+          ~-_    *  ./               \.   *   _-~
+             ~-_   /    ^         ^    \   _-~     *
+        *       ~-/    ___       ___    \-~        
+          .      |    (_O_)     (_O_)    |      .
+              * |                         | *     
+     -----------|                         |-----------
+       .        |    <               >    |        .    
+             *   |    \             /    | *
+                _-\    `.         .'    /-_    *
+          .  _-~ . \     `-.___.-'     /   ~-_     
+          _-~       `\               /'*      ~-_  
+         ~           /`--___   ___--'\           ~
+                *  /        ---     .  \        .
+                 /     *     |           \
+               /             |   *         \
+                          .  |        .
+                             |
+                             |
+Here is a picture of a neutron star to illustrate what I'm talking about.

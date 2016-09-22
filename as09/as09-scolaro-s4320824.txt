@@ -1,0 +1,29 @@
+PHYS3071 - AS09 - SCOLARO - s4320824
+
+---------------------------------------
+Justification and Choice of Parameters:
+---------------------------------------
+When choosing the parameters for this animation, some things were obvious. We wanted both of the waves to be moving at the same speed. We wanted them to both have the same amount of data points, time steps, and move over the same area. Also, we only wanted out unstable animation 'a little bit' unstable, so that we can show it on the same scale as the stable output. If the gain on the derivative in increased any more than it is here, the output very quickly blows up to +-10^200, which isn't easy to see when graphing next to a much smaller triangle. The natura conclusion is to vary the number of grid points this equation is calcualated on. This changes delta_x and thus the stability without changing anything super visible on the graph.
+
+---------------------------------------
+Paramaters Chosen:
+---------------------------------------
+Unstable Input:
+1 1 -1 1 2250 0.01 50 
+
+Stable Input:
+1 1 -1 1 150 0.01 50
+
+---------------------------------------
+Explanation of datatime1 and datatime2:
+---------------------------------------
+These are the two output files which are spat out of the program whenever you run it. They give cool data such as: The current itteration, the current time, the norm, and the average of the function at that specific point in time. You'll notice that the norm of both my functions manages to stay at 1 as it should. The only deviation is at the end of the program, the function begins to go off screen, so it slightly drops.
+
+The average of the function also trends upwards which also makes sense because when you look at the animation, both functions move towards the right. It's kind of neat that the unstable animation exhibits the same behaviour despite a very different evolution.
+
+---------------------------------------
+Explanation of Animation:
+---------------------------------------
+The difference between both animations is quite obvious. The stable triangle moves to the right and becomes smoother. The unstable triangle also moves to the right, but at any signifigant change (when it's integral is non zero) the integral is amplified out of control and it grows crazily. Interestingly enough, although it grows seemingly out of control, it still maintains the same norm and average as our origional equation.
+
+Another thing that is interesting to note is that it seems to exhibit behaviour close to what Michael told us about in lectures about dispersive gaussian wavepackets. But I wouldn't be surprised if this was just a coincidence here and not of actual signifigance.

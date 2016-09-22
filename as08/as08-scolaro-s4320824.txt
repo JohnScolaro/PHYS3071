@@ -1,0 +1,37 @@
+This is my explanation for my values chosen:
+
+For the mass of a head I've use 5kg, because: hypertextbook.com/facts/2006/DmitriyGekhman.shtml says that that's around the average weight of a human head. For the initial force at impact I'm using 1292 Newtons on force. The reason for this is that www.caranddriver.com/features/the-physics-of-airbags-feature says that the average airpag is only filled with 5 psi of pressure at the time of impact. (I mean, the head hitting it at speed with only limited ways for the air to escape increases it, but this is just an estimate) so I got a ruler and measured the rough surface area of my face and found the force applied and converted it to Newtons and I got 1292. I am using 5 as the decay value because after roughly 0.5 seconds I would imagine that the force supplied by the airbag has probably dropped considerably. (And using these values mean's its dropped by 90% after half a second. This prevents whiplash.) I'm using 0.1 seconds as the time that it time for the simulation because the same second source I've quoted also states that it takes roughly 0.03 seconds for the head to hit the wheel at 30 mph. This doesn't assume any acceleration time for the head, or take into account the extra time granted by the crumple zone of the car, so I've increased this to 0.1 seconds. I'm using 0.5 meters as the distance from the driver to the wheel. I just estimated this one.
+
+So when entering these values into the program, it looks like this:
+
+./as08-scolaro-s4320824.c 5 1292 5 0.1 0.5 20 datatime.dat
+
+The values I've found on the internet were with a car travelling at 30mph, or around 55kmph. So I would estimate that the car has hit at around 55kmph and due to the effects of the air bag, the head has been rapidly deccelerated down to almost 0 velocity. Here are the actual values produced by my code for this example:
+
+Time (s), Position (m), Velocity (m/s)
+0.000000,0.000000,13.870158
+0.005000,0.069351,13.255664
+0.010000,0.132557,12.056645
+0.015000,0.189917,10.916102
+0.020000,0.241718,9.831185
+0.025000,0.288229,8.799180
+0.030000,0.329709,7.817506
+0.035000,0.366404,6.883709
+0.040000,0.398547,5.995453
+0.045000,0.426359,5.150519
+0.050000,0.450052,4.346792
+0.055000,0.469827,3.582264
+0.060000,0.485874,2.855022
+0.065000,0.498377,2.163248
+0.070000,0.507507,1.505212
+0.075000,0.513429,0.879269
+0.080000,0.516300,0.283854
+0.085000,0.516267,-0.282522
+0.090000,0.513474,-0.821276
+0.095000,0.508055,-1.347432
+0.100000,0.500000,-1.610943
+
+
+So as you can see, the head does hit the steering wheel, but rather then at 17m/s it hits at 1.5m/s which is quite a reduction. This air bag could be better tuned for this speed impact, but instead I'm going to just leave it like this, and claim that it's specifically tuned for collisions at a slightly different speed.
+
+17m/s is 60kmph, so our estimation for the car speed is quite realistic. 5.4kmph is the speed of the head impact, so as you can see it's slowed down considerably. To put this in perspective: the aptly named splat calculator: "http://www.angio.net/personal/climb/speed" says that for a person my height and weight, this roughly correlates to the difference between hitting the gound head first after a 50cm drop, and a 15m drop. That's quite a difference.

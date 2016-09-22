@@ -1,0 +1,11 @@
+set term gif
+#set xrange [-1:1]
+#set yrange [0:2.5]
+set key below
+set style data line
+set title "AS11 SCOLARO s4320824"
+set xlabel "Position (m)"
+set ylabel "Probability"
+set datafile separator ","
+
+plot "data" title "Data"

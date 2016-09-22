@@ -1,0 +1,7 @@
+PHYS3071 AS07 SCOLARO s4320824
+
+The equipartition theorem states that as T -> infinity, the average energy of all the particles goes to Kb * T. Where Kb is boltzmann's constant, and T is the temperature.
+
+In our experiment, we've placed 500 particles in a box, all in the centre. As we randomly evolve the particles according to the Langevin equation, we can see that they diffuse throughout the box, and as can be seen from the plot, the average E(t) becomes roughly a constant after an initial increase in energy.
+
+Unfortunately I can't show you the other cool stuff it does because we can only submit one plot, but if you also increase the initial velocity, then the energy starts high, and eventually diffuses down and becomes the same as the result when the initial velocity is equal to 0.

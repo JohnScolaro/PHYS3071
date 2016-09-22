@@ -1,0 +1,10 @@
+set term gif
+set xrange [-1:1]
+set yrange [0:2]
+set key below
+set style data line
+set title "AS09 SCOLARO s4320824"
+set xlabel "Position (m)"
+set ylabel "U"
+
+plot "data" title "k < 1 (Stable)", "../plots2/data" title "k > 1 (Unstable)"

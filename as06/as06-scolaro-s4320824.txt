@@ -1,0 +1,72 @@
+So rather than running this experiment a bunch of times and graphing it against the analytical solution, we've ran it a couple times to show that the averages our program obtain, react identically to the equation that governs this system.
+
+So as a starting point, lets imagine a system with an initial position of 10 meters away (inital_position), we let the system evolve for 5 seconds (final_time), it has 1000 timesteps in this period of time (num_timesteps), a damping strength of 1 (gamma), an error magnitude of 2 (g), a distribution width of 0.5 (p), all averaged over 10000 trajectories (ntraj). The labels in brackets are how I'm going to refer to them from now on. The random number generator in this program is seeded with a value of 1. (Because it isn't seeded and this is the default seed).
+
+This situation is entered into the program like so:
+
+./as06-scolaro-s4320824 10 5 1000 1 2 0.5 10000
+
+If you've entered it with the wrong number of arguments, you'll be prompted to change your input. The output to this program should look like this:
+
+  <x>      <x^2>      V(x)        <y>          <y^2>         V(y)      Analytical Solution
+0.06775   0.07203   0.06744   1.00557e+01   1.58651e+03   1.48540e+03  8.81019e+04
+
+###############################################################################
+
+Our value of V(y) tends towards the analytical solution. Examples to show this:
+
+If we double the value of g, the V(y) should quadruple.
+
+Input: ./as06-scolaro-s4320824 10 5 1000 1 4 0.5 10000
+
+Output:
+  <x>       <x^2>      V(x)        <y>          <y^2>         V(y)      Analytical Solution
+0.06930   0.27455   0.26975   1.02854e+01   6.04737e+03   5.94158e+03  3.52407e+05
+
+So as you can see, the analytical solution has quadrupled, and the V(y) has also approximately quadrupled.
+
+Also, when the error strength term (g) is set to 0, we get expected results:
+
+Input: ./as06-scolaro-s4320824 10 5 1000 1 0 0.5 10000
+
+Output:
+  <x>       <x^2>      V(x)        <y>          <y^2>         V(y)      Analytical Solution
+0.06621   0.00438   0.00000   9.82599e+00   9.65500e+01   1.81899e-12  0.00000e+00
+
+This is expected because with no error, the simulations should have no error and thus no varience, so it makes sense that V(y) ~= 0.
+
+Another thing we were asked to do was to vary the value of p so that at different time steps, the value of V(y) is constant. I've found that with a value of p = 1, it remains 'relatively' the same. And also when p = 0. Here is an example of it working:
+
+Input: ./as06-scolaro-s4320824 10 5 1000 1 1 1 10000
+Output:
+  <x>       <x^2>      V(x)        <y>          <y^2>         V(y)      Analytical Solution
+0.06641   0.00560   0.00119   9.85653e+00   1.23410e+02   2.62583e+01  2.20255e+04
+
+Input: ./as06-scolaro-s4320824 10 5 5000 1 1 1 10000
+Output:
+<x>       <x^2>      V(x)        <y>          <y^2>         V(y)      Analytical Solution
+0.06719   0.00458   0.00006   9.97252e+00   1.00792e+02   1.34049e+00  2.20255e+04
+
+Unfortunately the value of V(y) is diverging from the analytical solution here, and I'm unsure why. :(
+
+But lastly, here is another set of inputs that show that the value of V(y) does at least follow the Analytical solution quite accurately when you vary different variables.
+
+Input: ./as06-scolaro-s4320824 10 100 1000 1 2 0.5 10000
+Output:
+  <x>       <x^2>      V(x)        <y>          <y^2>         V(y)      Analytical Solution
+0.00868   4.71945   4.71938   2.33244e+41   3.41026e+87   3.41021e+87  2.89039e+87
+
+So as you can see by this output, although the other results were a little strange, the value of V(y) does actually approach the analytical solution, and is always within a few orders of magnitude of it. Another example of this to prove that this isn't a one off phenomena:
+
+Input : ./as06-scolaro-s4320824 0 10 500 1 4 0.1 10000
+Output:
+   <x>       <x^2>      V(x)         <y>           <y^2>         V(y)      Analytical Solution
+-0.02081   10.07842   10.07799   -4.58402e+02   4.88970e+09   4.88949e+09  7.76264e+09
+
+So again, our output V(y) does approach the analytical solution.
+
+###############################################################################
+
+One thing that I find especially wierd and don't understand is that in the equation we've been given: (g^2/gamma) * (e^gamma*t - 1). Essentially, since gamma is the exponential, if gamma grows larger, the equation grows larger really fast. I find this unphysical and unintuitive to me because if we visualise this system as ye olde mass on a spring question, then gamma is the strength of this spring. If the strength of this spring increases, I would expect the mass on the end of the spring to have less varience as it is more tightly contained by the spring. This equation suggests that this doesn't happen and I don't understand why.
+
+Other parts of the equation make sense however, like the g^2 term. If the power of the noise it larger, we obviously expect a higher varience in results.

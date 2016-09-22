@@ -1,0 +1,16 @@
+JOHN SCOLARO - AS11 - S4320824 - PHYS3071
+
+G'Day there Tuterino,
+
+So I tried real hard to get this to work, but no matter what I change:
+	A) It just doesn't seems to ever work.
+	B) All my graphs grow out of control.
+	C) They are all eventually unstable and throw themselves appart.
+
+So in the hope of obtaining some part marks, I've attached an animation of what I've got so far. It's a little bit funky, but check it out anyway.
+
+So I can get better results sometimes if I let KB = 1, and sometimes it works better if KB = 1.3E-23, but also the constant (a0 + b0) is a huge negative number, and means that if I use KB = 1, the graph grows by 1E5 every frame, and keeps flipping. I've checked my derivation against a bunch of friends, and they've got the same problems with the same equations. Check out how I evolve my function each frame beginning on line 154.
+
+I really just generally have no idea what's going on. This worksheet was very complicated. I don't know what it's asking me to do.
+
+
